@@ -7,7 +7,7 @@ const ResultSchema = z.object({
 });
 
 const GlobalArgsSchema = z.object({
-  webhookUrl: z.string(),
+  webhookUrl: z.string().describe("Discord webhook URL"),
 });
 
 export const model = {
@@ -26,8 +26,10 @@ export const model = {
     send: {
       description: "Send a message to Discord via webhook",
       arguments: z.object({
-        content: z.string(),
-        username: z.string().optional(),
+        content: z.string().describe("Message content to post"),
+        username: z.string().optional().describe(
+          "Override the webhook's default username",
+        ),
       }),
       execute: async (args, context) => {
         const { webhookUrl } = context.globalArgs;
