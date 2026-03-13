@@ -1,0 +1,12 @@
+manifestVersion: 1
+name: "@keeb/discord"
+version: "2026.03.13.1"
+description: "Discord webhook messaging"
+repository: https://github.com/keeb/swamp-discord
+labels:
+  - discord
+  - webhook
+  - messaging
+  - chat
+models:
+  - webhook.ts
